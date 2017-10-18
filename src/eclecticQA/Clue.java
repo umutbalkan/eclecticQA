@@ -5,7 +5,6 @@
  * 
  *********************************
  * Clue.java
- * written at: Always Rock Bar
  * date: OCT/18/17
  */
 package eclecticQA;

@@ -2,5 +2,6 @@ package eclecticQA;
 
 
 public class Puzzle {
-	Clue c;
+	Clue clue;
+	Grid grid;
 }

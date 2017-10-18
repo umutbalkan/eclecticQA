@@ -5,7 +5,6 @@
  * 
  *********************************
  * WebParser.java
- * written at: Always Rock Bar
  * date: OCT/18/17
  * 	Fetches data from NYTimes - Daily Mini Crossword Puzzle homepage. Extracts clues and grid cells.
  */
@@ -20,15 +19,14 @@ public class WebParser {
 
 	// Properties
 	private Document html_doc;
-	private String webTitle, acrossText, downText;
-	private Element across_clues, down_clues;
-	
+	private String webTitle, acrossText, downText, gridText;
+	private Element across_clues, down_clues, grid;
 	
 	// Constructor
 	WebParser(String url) throws IOException{
 		
 		// Fetch the NYTIMES - Daily Mini homepage, parse it to a DOM (Document-Object-Model)
-		html_doc = Jsoup.connect("https://www.nytimes.com/crosswords/game/mini").get();
+		html_doc = Jsoup.connect(url).get();
 		
 		// Fetch title
 		setWebTitle(html_doc.title());
