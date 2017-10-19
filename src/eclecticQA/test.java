@@ -26,6 +26,8 @@ public class test {
 		Element across_clues = html_doc.getElementsByClass("ClueList-list--2dD5-").first(); // ACROSS CLUES
 		Element down_clues = html_doc.getElementsByClass("ClueList-list--2dD5-").last(); // DOWN CLUES
 		
+		Element grids = html_doc.getElementsByClass("Board-svg--34be-")
+		
 		// Combining ACROSS & DOWN
 		String across_txt = across_clues.text();
 		String down_txt = down_clues.text();

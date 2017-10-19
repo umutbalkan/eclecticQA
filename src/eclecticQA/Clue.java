@@ -34,5 +34,5 @@ public class Clue {
 	}
 	public void setIndex(int index) {
 		this.c_index = index;
-	};
+	}
 }
