@@ -4,6 +4,7 @@ package eclecticQA;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
@@ -46,7 +47,7 @@ public class test {
 		Elements cells = grids.first().select("rect");
 		String board = "";
 		for( int i = 0; i < cells.size(); i++) {
-			if(i % 5 == 0) board += "\n";
+			if(i % Math.sqrt(cells.size()) == 0) board += "\n";
 			
 			Element t = cells.get(i);
 			String cell_type = t.className();
@@ -58,17 +59,16 @@ public class test {
 		System.out.println(board);
 		
 		
-		
 		// WRITE TXT FILE
 		BufferedWriter writer = null;
 		try
 		{
 		    writer = new BufferedWriter( new FileWriter(title + ".txt"));
 		    writer.write(yeah);
-		    writer.write(board);
-
+		    writer.write(board + "/n");	
+		    System.out.println("Crossword saved with the name: " + title + ".txt");
 		}
-		catch ( IOException e) {}
+		catch ( IOException e) {} // handle exception
 		finally
 		{
 		    try
@@ -76,11 +76,11 @@ public class test {
 		        if ( writer != null)
 		        writer.close( );
 		    }
-		    catch ( IOException e) {}
+		    catch ( IOException e) {} // handle exception
 		}
 		
 		
-
+		
 	}//END_main()
 
 }//END_test
