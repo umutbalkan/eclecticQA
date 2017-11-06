@@ -2,6 +2,9 @@ package eclecticQA;
 
 
 public class Puzzle {
-	Clue clue;
-	Grid grid;
+	
+	
+	private	Clue clue;
+	private	Grid grid;
+	private WebParser parser;
 }
